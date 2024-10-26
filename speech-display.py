@@ -75,9 +75,12 @@ async def main():
 
     # Connect and start streaming with different bit depths and sample rates
     await b.connect(data_response_handler=receive_data)
-    await record_and_transcribe(b, 8000, 8)
-    await record_and_transcribe(b, 8000, 16)
-    await record_and_transcribe(b, 16000, 8)
+    # await record_and_transcribe(b, 8000, 8)
+    # await record_and_transcribe(b, 8000, 16)
+    # await record_and_transcribe(b, 16000, 8)
+    while True:
+        await record_and_transcribe(b, 16000, 16)
+
     await b.disconnect()
 
 
